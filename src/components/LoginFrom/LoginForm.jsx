@@ -1,12 +1,10 @@
 import { nanoid } from 'nanoid';
 import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 import { loginUser } from 'redux/auth/auth-operations';
 
 const LoginFrom = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const { register, handleSubmit } = useForm({
     defaultValues: {
