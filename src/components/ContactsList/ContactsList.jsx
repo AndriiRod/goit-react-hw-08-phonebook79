@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
 
-import { selectStatus, selectVisibleContact } from 'redux/selectors';
+import { selectStatus, selectVisibleContact } from 'redux/contacts/selectors';
 
 import { List } from './ContactsList.styled';
 import Loader from 'components/Loader/Loader';

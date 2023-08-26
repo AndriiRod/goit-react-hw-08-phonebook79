@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { Input, Label, Icon } from './FindField.styled';
 
-import { selectFilter } from 'redux/selectors';
-import { search } from 'redux/filter/slice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { search } from 'redux/contacts/filter-slice';
 
 const FindField = () => {
   const dispatch = useDispatch();

@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { toast } from 'react-toastify';
 
-import { selectContacts } from 'redux/selectors';
-import { addContacts } from 'redux/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContacts } from 'redux/contacts/operations';
 
 import schema from '../../validation/schema';
 

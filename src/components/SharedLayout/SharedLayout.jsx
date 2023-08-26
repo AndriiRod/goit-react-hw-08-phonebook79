@@ -1,31 +1,46 @@
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 import {
-  Section,
   Header,
   Nav,
   NavLinkWrap,
   Counter,
+  Container,
 } from './SharedLayout.styled';
-import { selectContacts, selectError } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
+import { selectUserStatus, selectUserName } from 'redux/auth/auth-selectors';
+import { logoutUser } from 'redux/auth/auth-operations';
 
 const SharedLayout = () => {
   const contacts = useSelector(selectContacts);
-  const error = useSelector(selectError);
-  error && toast.error(error);
+  const status = useSelector(selectUserStatus);
+  const userName = useSelector(selectUserName);
+  const dispatch = useDispatch();
+
+  const huddleLogout = () => {
+    dispatch(logoutUser());
+  };
+
   return (
-    <Section>
+    <Container>
       <Header>
-        <Nav>
-          <NavLinkWrap to="/">
-            Contacts <Counter>{contacts.length}</Counter>
-          </NavLinkWrap>
-          <NavLinkWrap to="/addContact">Add New Contact</NavLinkWrap>
-        </Nav>
+        {status && (
+          <Nav>
+            <NavLinkWrap to="/">
+              Contacts <Counter>{contacts.length}</Counter>
+            </NavLinkWrap>
+            <NavLinkWrap to="/addContact">Add New Contact</NavLinkWrap>
+            <p>{userName}</p>
+            <button onClick={huddleLogout} type="button">
+              Logout
+            </button>
+          </Nav>
+        )}
       </Header>
       <Outlet />
-    </Section>
+    </Container>
   );
 };
 
