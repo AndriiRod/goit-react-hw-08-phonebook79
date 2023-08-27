@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { Input, Label, Icon } from './FindField.styled';
 
