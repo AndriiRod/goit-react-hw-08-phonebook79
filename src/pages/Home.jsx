@@ -14,6 +14,7 @@ const Home = () => {
       <button type="button" onClick={() => handleClick('log')}>
         Login
       </button>
+
       <Outlet />
     </div>
   );

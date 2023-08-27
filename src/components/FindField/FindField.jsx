@@ -28,7 +28,3 @@ const FindField = () => {
 };
 
 export default FindField;
-
-FindField.propTypes = {
-  value: PropTypes.string,
-};

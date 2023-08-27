@@ -1,5 +1,4 @@
 import ContactItem from 'components/ContactItem/';
-import PropTypes from 'prop-types';
 
 import { useSelector } from 'react-redux';
 
@@ -34,11 +33,3 @@ const ContactsList = () => {
 };
 
 export default ContactsList;
-
-ContactsList.propTypes = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-    })
-  ),
-};

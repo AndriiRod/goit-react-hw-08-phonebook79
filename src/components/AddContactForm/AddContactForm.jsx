@@ -40,7 +40,9 @@ const AddContactForm = () => {
 
   const handleSubmitForm = data => {
     const { name } = data;
-    const matches = contacts.find(item => item.name === name);
+    const matches = contacts.find(
+      item => item.name.toLowerCase() === name.toLowerCase()
+    );
     if (matches) {
       toast.info(
         `${name.charAt(0).toUpperCase() + name.slice(1)} is already in contacts`
